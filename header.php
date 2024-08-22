@@ -12,11 +12,19 @@
     <div class="navbar">
         <!-- Lien avec le logo en arrière-plan -->
         <a href="<?php echo home_url(); ?>" class="logo" aria-label="Accueil"></a>
+        
+        <!-- Bouton burger -->
+        <div class="menu-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <div class="menu-items">
             <a href="<?php echo home_url('/nous-rencontrer'); ?>">Nous rencontrer</a>
             <?php if ( is_user_logged_in() ) : ?>
-                    <a href="<?php echo esc_url(admin_url()); ?>">Admin</a>
-                <?php endif; ?>
+                <a href="<?php echo esc_url(admin_url()); ?>">Admin</a>
+            <?php endif; ?>
             <a href="<?php echo home_url('/commander'); ?>" class="btn-commander">Commander</a>
         </div>
     </div>
@@ -24,4 +32,3 @@
 <?php wp_footer(); ?>
 </body>
 </html>
-
